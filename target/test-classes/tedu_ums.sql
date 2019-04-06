@@ -1,0 +1,11 @@
+CREATE DATABASE tedu_ums;
+USE tedu_ums;
+CREATE TABLE t_user(
+	id INT AUTO_INCREMENT,
+	username VARCHAR(20) UNIQUE NOT NULL,
+	`password` VARCHAR(20) NOT NULL,
+	phone VARCHAR(16) NOT NULL,
+	email VARCHAR(30) NOT NULL,
+	PRIMARY KEY(id)
+);
+DESC t_user;

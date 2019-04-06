@@ -1,0 +1,12 @@
+@charset "utf-8";
+
+.bgimg {
+    width: 880px;
+    height: 360px;
+    background-size: cover;
+    background-image: url("../images/loginFail.png");
+}
+
+p {
+	color: #f00;
+}

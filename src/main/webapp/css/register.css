@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.input_form {
+    width: 400px;
+    margin-left: 3%;
+    margin-top: 2%;
+}
+
+.input_form div {
+    margin: 12% 10%;
+}
+
+.input_form input {
+    font-size: 20px;
+    display: block;
+    width: 270px;
+    height: 35px;
+    outline: none;
+}
+
+.input_form .submit_btn input {
+    border-radius: 5px;
+    height: 40px;
+}
+
+.link {
+    font-size: 24px;
+}

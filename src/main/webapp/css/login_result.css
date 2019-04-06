@@ -1,0 +1,12 @@
+@CHARSET "utf-8";
+
+.bgimg_success {
+    width: 700px;
+    height: 350px;
+    background-size: cover;
+    background-image: url("../images/loginSuccess.jpeg");
+}
+
+p {
+	color: #007ACC;
+}
