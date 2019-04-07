@@ -45,22 +45,19 @@ public class UserController {
 	
 	@RequestMapping("/handleLogin.do")
 	public String handleLogin(@RequestParam("username") String username, @RequestParam("password") String password, ModelMap modelMap) {
-		User user = userService.findUserByUsername(username);
-		if(user == null) {
-			// user not found, fail
-			modelMap.addAttribute("errorMessage", "用戶不存在, 請檢查用戶名是否正確!");
+		Integer result = userService.login(username, password);
+		if(result == 1) {
+			// login success
+			modelMap.addAttribute("status", "將跳轉至首頁...");
+			return "login_result";
+		} else if(result == -1) {
+			// user not found
+			modelMap.addAttribute("errorMessage", "用戶名不存在! 請確認或註冊後登入!");
 			return "error";
 		} else {
-			// user found, check password
-			if(password.equals(user.getPassword())) {
-				// password match, proceed to login
-				modelMap.addAttribute("status", "將重新跳轉至首頁...");
-				return "login_result";
-			} else {
-				// invalid password, login fail
-				modelMap.addAttribute("errorMessage", "密碼錯誤! 請重新檢查密碼, 並注意大小寫");
-				return "error";
-			}
+			// invalid password
+			modelMap.addAttribute("errorMessage", "密碼錯誤! 請重新確認密碼!");
+			return "error";
 		}
 		
 	}
